@@ -1,0 +1,75 @@
+<navigation-bar title="{{levelText}}面试题" back="{{true}}" color="#3D2B1F" background="#F8F4EF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list" enhanced show-scrollbar="{{false}}" scroll-top="{{scrollTop}}">
+  <view class="page">
+    <view class="hero-card">
+      <view class="hero-tags">
+        <text class="level-tag {{isExtra ? 'extra' : ''}}">{{levelText}}</text>
+        <text wx:if="{{parentTitle}}" class="parent-tag" bindtap="onTapParent">来自 · {{parentTitle}}</text>
+      </view>
+      <text class="hero-title">{{title}}</text>
+    </view>
+
+    <view
+      wx:if="{{!showAnswer}}"
+      class="reveal-card"
+      hover-class="reveal-card--press"
+      bindtap="onRevealAnswer"
+    >
+      <text class="reveal-action">点击查看答案</text>
+    </view>
+
+    <block wx:else>
+      <view class="answer-toolbar">
+        <text class="hide-answer" bindtap="onHideAnswer">收起答案</text>
+      </view>
+      <view class="answer-card">
+        <block wx:for="{{blocks}}" wx:key="index">
+          <view wx:if="{{item.type === 'code'}}" class="code-block">
+            <text class="code-text" user-select>{{item.text}}</text>
+          </view>
+          <view wx:elif="{{item.type === 'li'}}" class="li-row">
+            <text class="li-dot">·</text>
+            <view class="li-content">
+              <text
+                wx:for="{{item.inlines}}"
+                wx:for-item="span"
+                wx:key="index"
+                class="{{span.t === 'code' ? 'inline-code' : 'para-text'}}"
+                user-select
+              >{{span.v}}</text>
+            </view>
+          </view>
+          <view wx:else class="para">
+            <text
+              wx:for="{{item.inlines}}"
+              wx:for-item="span"
+              wx:key="index"
+              class="{{span.t === 'code' ? 'inline-code' : 'para-text'}}"
+              user-select
+            >{{span.v}}</text>
+          </view>
+        </block>
+      </view>
+
+      <view class="related" wx:if="{{related.length}}">
+        <text class="related-title">相关追问</text>
+        <view
+          wx:for="{{related}}"
+          wx:key="id"
+          class="related-item"
+          hover-class="related-item--press"
+          bindtap="onTapRelated"
+          data-id="{{item.id}}"
+        >
+          <text class="related-name">{{item.title}}</text>
+          <text class="related-go">去看看</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+
+<view class="pager">
+  <view class="pager-btn {{hasPrev ? '' : 'is-disabled'}}" bindtap="onTapPrev">上一题</view>
+  <view class="pager-btn primary {{hasNext ? '' : 'is-disabled'}}" bindtap="onTapNext">下一题</view>
+</view>

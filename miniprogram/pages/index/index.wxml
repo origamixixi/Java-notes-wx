@@ -1,0 +1,66 @@
+<navigation-bar title="八股文天天背" back="{{false}}" color="#3D2B1F" background="#F8F4EF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list" enhanced show-scrollbar="{{false}}">
+  <view class="page">
+    <view class="hero">
+      <view class="hero-glow"></view>
+      <view class="hero-glow hero-glow--alt"></view>
+      <view class="hero-top">
+        <text class="hero-greet">{{greeting}}</text>
+        <text class="hero-date">{{today}}</text>
+      </view>
+      <view class="hero-title">Java 八股文天天背</view>
+      <view class="hero-desc">高频考点拆成小卡片，每天啃一点，面试更从容</view>
+      <view class="hero-stats">
+        <view class="stat">
+          <text class="stat-num">{{modules.length}}</text>
+          <text class="stat-label">知识模块</text>
+        </view>
+        <view class="stat-line"></view>
+        <view class="stat">
+          <text class="stat-num">{{totalCount}}</text>
+          <text class="stat-label">精选题目</text>
+        </view>
+        <view class="stat-line"></view>
+        <view class="stat">
+          <text class="stat-num">每日</text>
+          <text class="stat-label">持续更新</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-head">
+        <text class="section-title">知识模块</text>
+        <text class="section-hint">挑一个开始背</text>
+      </view>
+
+      <view class="module-grid">
+        <view
+          wx:for="{{modules}}"
+          wx:key="id"
+          class="module-card theme-{{item.theme}}"
+          hover-class="module-card--press"
+          hover-stay-time="80"
+          bindtap="onTapModule"
+          data-id="{{item.id}}"
+          data-title="{{item.title}}"
+        >
+          <view class="module-deco"></view>
+          <view class="module-deco module-deco--sm"></view>
+          <view class="module-icon">
+            <text class="module-icon-text">{{item.icon}}</text>
+          </view>
+          <view class="module-body">
+            <view class="module-name-row">
+              <text class="module-name">{{item.title}}</text>
+              <text class="module-count">{{item.countText}}</text>
+            </view>
+            <text class="module-sub">{{item.subtitle}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="footer">坚持比天赋更重要</view>
+  </view>
+</scroll-view>

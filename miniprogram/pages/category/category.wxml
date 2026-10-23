@@ -1,0 +1,73 @@
+<navigation-bar title="{{title}}" back="{{true}}" color="#3D2B1F" background="#F8F4EF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list" enhanced show-scrollbar="{{false}}">
+  <view class="page">
+    <block wx:if="{{empty}}">
+      <view class="empty">
+        <view class="empty-badge">{{title}}</view>
+        <text class="empty-title">题目正在整理</text>
+        <text class="empty-desc">这个模块的八股卡片马上就来，先回到主页看看其他篇章。</text>
+        <view class="empty-btn" hover-class="empty-btn--press" bindtap="onBackHome">返回主页</view>
+      </view>
+    </block>
+
+    <block wx:else>
+      <view class="progress-card">
+        <view class="progress-copy">
+          <text class="progress-title">已看 {{readCount}} / {{totalCount}}</text>
+          <text class="progress-desc">核心题打底，拓展题用来追问</text>
+        </view>
+        <view class="progress-bar">
+          <view class="progress-fill" style="width: {{progressPercent}}%;"></view>
+        </view>
+      </view>
+
+      <view class="section" wx:if="{{coreQuestions.length}}">
+        <view class="section-head">
+          <text class="section-title">核心面试题</text>
+          <text class="section-count">{{coreQuestions.length}}题</text>
+        </view>
+        <view
+          wx:for="{{coreQuestions}}"
+          wx:key="id"
+          class="question-card"
+          hover-class="question-card--press"
+          bindtap="onTapQuestion"
+          data-id="{{item.id}}"
+        >
+          <view class="question-index">{{index + 1}}</view>
+          <view class="question-main">
+            <view class="question-top">
+              <text class="question-title">{{item.title}}</text>
+              <text class="question-tag {{item.read ? 'is-read' : ''}}">{{item.read ? '已看' : item.levelText}}</text>
+            </view>
+            <text class="question-summary">{{item.summary}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="section" wx:if="{{extraQuestions.length}}">
+        <view class="section-head">
+          <text class="section-title">拓展面试题</text>
+          <text class="section-count">{{extraQuestions.length}}题</text>
+        </view>
+        <view
+          wx:for="{{extraQuestions}}"
+          wx:key="id"
+          class="question-card"
+          hover-class="question-card--press"
+          bindtap="onTapQuestion"
+          data-id="{{item.id}}"
+        >
+          <view class="question-index extra">{{index + 1}}</view>
+          <view class="question-main">
+            <view class="question-top">
+              <text class="question-title">{{item.title}}</text>
+              <text class="question-tag extra {{item.read ? 'is-read' : ''}}">{{item.read ? '已看' : item.levelText}}</text>
+            </view>
+            <text class="question-summary">{{item.summary}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
