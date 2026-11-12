@@ -14,126 +14,27 @@ SRC_ROOT = Path(r"d:\code\project\code-java\Java-notes\Java八股文")
 DEST_DIR = Path(__file__).resolve().parent.parent / "miniprogram" / "data"
 
 MODULES = [
-    {
-        "id": "basic",
-        "dir": "01-基础篇",
-        "title": "基础篇",
-        "subtitle": "面向对象 · 集合 · 异常",
-        "icon": "☕",
-        "theme": "basic",
-    },
-    {
-        "id": "jvm",
-        "dir": "02-JVM篇",
-        "title": "JVM 篇",
-        "subtitle": "内存模型 · GC · 类加载",
-        "icon": "⚙️",
-        "theme": "jvm",
-    },
-    {
-        "id": "thread",
-        "dir": "03-多线程&并发篇",
-        "title": "多线程",
-        "subtitle": "锁 · 并发 · 线程池",
-        "icon": "⚡",
-        "theme": "thread",
-    },
-    {
-        "id": "spring",
-        "dir": "04-Spring篇",
-        "title": "Spring",
-        "subtitle": "IOC · AOP · 事务",
-        "icon": "🍃",
-        "theme": "spring",
-    },
-    {
-        "id": "springboot",
-        "dir": "05-SpringBoot篇",
-        "title": "SpringBoot",
-        "subtitle": "自动装配 · 起步依赖",
-        "icon": "🚀",
-        "theme": "boot",
-    },
-    {
-        "id": "springcloud",
-        "dir": "06-Springcloud篇",
-        "title": "SpringCloud",
-        "subtitle": "微服务 · 网关 · 注册中心",
-        "icon": "☁️",
-        "theme": "cloud",
-    },
-    {
-        "id": "mysql",
-        "dir": "08-MySQL篇",
-        "title": "MySQL",
-        "subtitle": "索引 · 事务 · 锁",
-        "icon": "🐬",
-        "theme": "mysql",
-    },
-    {
-        "id": "redis",
-        "dir": "09-Redis篇",
-        "title": "Redis",
-        "subtitle": "缓存 · 持久化 · 高可用",
-        "icon": "🔴",
-        "theme": "redis",
-    },
-    {
-        "id": "distributed",
-        "dir": "10-分布式篇",
-        "title": "分布式",
-        "subtitle": "锁 · 一致性 · 限流",
-        "icon": "🔗",
-        "theme": "distributed",
-    },
-    {
-        "id": "mq",
-        "dir": "13-MQ篇",
-        "title": "消息队列",
-        "subtitle": "可靠性 · 顺序 · 积压",
-        "icon": "📨",
-        "theme": "mq",
-    },
-    {
-        "id": "rocketmq",
-        "dir": "13-MQ篇/RocketMQ篇",
-        "title": "RocketMQ",
-        "subtitle": "存储 · 事务消息 · 高可用",
-        "icon": "🔥",
-        "theme": "rocket",
-    },
-    {
-        "id": "linux",
-        "dir": "15-容器篇/Linux篇",
-        "title": "Linux",
-        "subtitle": "命令 · 权限 · 排障",
-        "icon": "🐧",
-        "theme": "linux",
-    },
-    {
-        "id": "docker",
-        "dir": "15-容器篇/Docker篇",
-        "title": "Docker",
-        "subtitle": "镜像 · 容器 · 网络",
-        "icon": "🐳",
-        "theme": "docker",
-    },
-    {
-        "id": "k8s",
-        "dir": "15-容器篇/K8s篇",
-        "title": "K8s",
-        "subtitle": "Pod · 调度 · 发布",
-        "icon": "☸️",
-        "theme": "k8s",
-    },
-    {
-        "id": "algo",
-        "dir": "16-数据结构与算法篇",
-        "title": "算法",
-        "subtitle": "链表 · 树 · 动态规划",
-        "icon": "📐",
-        "theme": "algo",
-    },
+    {"id": "basic", "dir": "01-基础", "title": "基础篇", "subtitle": "面向对象 · 集合 · 异常", "icon": "☕", "theme": "basic"},
+    {"id": "jvm", "dir": "02-JVM", "title": "JVM 篇", "subtitle": "内存模型 · GC · 类加载", "icon": "⚙️", "theme": "jvm"},
+    {"id": "thread", "dir": "03-多线程&并发", "title": "多线程", "subtitle": "锁 · 并发 · 线程池", "icon": "⚡", "theme": "thread"},
+    {"id": "spring", "dir": "04-Spring/SpringFramework", "title": "Spring", "subtitle": "IOC · AOP · 事务", "icon": "🍃", "theme": "spring"},
+    {"id": "springboot", "dir": "04-Spring/SpringBoot", "title": "SpringBoot", "subtitle": "自动装配 · 起步依赖", "icon": "🚀", "theme": "boot"},
+    {"id": "springcloud", "dir": "04-Spring/SpringCloud", "title": "SpringCloud", "subtitle": "微服务 · 网关 · 注册中心", "icon": "☁️", "theme": "cloud"},
+    {"id": "mybatis", "dir": "07-MyBatis", "title": "MyBatis", "subtitle": "映射 · 缓存 · 插件", "icon": "📒", "theme": "mybatis"},
+    {"id": "mysql", "dir": "05-MySQL", "title": "MySQL", "subtitle": "索引 · 事务 · 锁", "icon": "🐬", "theme": "mysql"},
+    {"id": "redis", "dir": "09-Redis", "title": "Redis", "subtitle": "缓存 · 持久化 · 高可用", "icon": "🔴", "theme": "redis"},
+    {"id": "distributed", "dir": "10-分布式", "title": "分布式", "subtitle": "锁 · 一致性 · 限流", "icon": "🔗", "theme": "distributed"},
+    {"id": "nginx", "dir": "11-Nginx", "title": "Nginx", "subtitle": "反向代理 · 负载均衡", "icon": "🟩", "theme": "nginx"},
+    {"id": "zk", "dir": "12-zookeeper", "title": "ZooKeeper", "subtitle": "ZAB · 选主 · 监听", "icon": "🦓", "theme": "zk"},
+    {"id": "mq", "dir": "13-MQ", "title": "消息队列", "subtitle": "可靠性 · 顺序 · 积压", "icon": "📨", "theme": "mq"},
+    {"id": "kafka", "dir": "13-MQ/Kafka", "title": "Kafka", "subtitle": "分区 · 副本 · 消费组", "icon": "🪵", "theme": "kafka"},
+    {"id": "rabbit", "dir": "13-MQ/RabbitMQ", "title": "RabbitMQ", "subtitle": "交换机 · 队列 · 确认", "icon": "🐰", "theme": "rabbit"},
+    {"id": "rocketmq", "dir": "13-MQ/RocketMQ", "title": "RocketMQ", "subtitle": "存储 · 事务消息 · 高可用", "icon": "🔥", "theme": "rocket"},
+    {"id": "es", "dir": "14-Elasticsearch", "title": "Elasticsearch", "subtitle": "倒排 · 分片 · 查询", "icon": "🔎", "theme": "es"},
+    {"id": "linux", "dir": "15-容器/Linux", "title": "Linux", "subtitle": "命令 · 权限 · 排障", "icon": "🐧", "theme": "linux"},
+    {"id": "docker", "dir": "15-容器/Docker", "title": "Docker", "subtitle": "镜像 · 容器 · 网络", "icon": "🐳", "theme": "docker"},
+    {"id": "k8s", "dir": "15-容器/K8s", "title": "K8s", "subtitle": "Pod · 调度 · 发布", "icon": "☸️", "theme": "k8s"},
+    {"id": "algo", "dir": "16-数据结构与算法", "title": "算法", "subtitle": "链表 · 树 · 动态规划", "icon": "📐", "theme": "algo"},
 ]
 
 
@@ -145,6 +46,7 @@ def slugify(title: str) -> str:
 
 def clean_inline(text: str) -> str:
     text = text.replace("**", "").replace("__", "")
+    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
     return re.sub(r"[ \t]{2,}", " ", text)
 
 
@@ -294,15 +196,24 @@ def import_file(questions, used_ids, mod, file_path, level):
         append_question(questions, used_ids, mod, extra["title"], extra["body"], "extra", question_id)
 
 
+def should_skip(file_path):
+    name = file_path.name.lower()
+    return name.startswith("00.") or name == "readme.md"
+
+
 def import_module(mod):
     module_dir = SRC_ROOT / mod["dir"]
     questions = []
     used_ids = set()
+    interview_files = [path for path in list_markdown_files(module_dir / "面试题") if not should_skip(path)]
+    if interview_files:
+        for file_path in interview_files:
+            import_file(questions, used_ids, mod, file_path, "core")
+        return questions
+
     core_files = list_markdown_files(module_dir / "核心面试题")
     extra_files = list_markdown_files(module_dir / "拓展面试题")
-    # 有的篇章把正题整体挪进了「拓展面试题」，文件夹空了就不当追问。
     extra_level = "extra" if core_files else "core"
-
     for file_path in core_files:
         import_file(questions, used_ids, mod, file_path, "core")
     for file_path in extra_files:

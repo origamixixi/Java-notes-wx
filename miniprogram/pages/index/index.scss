@@ -396,6 +396,78 @@ page {
   }
 }
 
+.theme-mybatis {
+  background: linear-gradient(160deg, #fff4e8 0%, #f3cda6 100%);
+
+  .module-deco {
+    background: #c47a2c;
+  }
+
+  .module-count {
+    color: #9a5c16;
+  }
+}
+
+.theme-nginx {
+  background: linear-gradient(160deg, #e9f8ee 0%, #b6e2c4 100%);
+
+  .module-deco {
+    background: #2f8a4e;
+  }
+
+  .module-count {
+    color: #246b3c;
+  }
+}
+
+.theme-zk {
+  background: linear-gradient(160deg, #f1f4f8 0%, #cfd8e3 100%);
+
+  .module-deco {
+    background: #5a6f86;
+  }
+
+  .module-count {
+    color: #445566;
+  }
+}
+
+.theme-kafka {
+  background: linear-gradient(160deg, #f6f1e8 0%, #e0d0b0 100%);
+
+  .module-deco {
+    background: #6b542e;
+  }
+
+  .module-count {
+    color: #53411f;
+  }
+}
+
+.theme-rabbit {
+  background: linear-gradient(160deg, #fff0e6 0%, #f5c7a8 100%);
+
+  .module-deco {
+    background: #d46a2c;
+  }
+
+  .module-count {
+    color: #a8511c;
+  }
+}
+
+.theme-es {
+  background: linear-gradient(160deg, #eef6fb 0%, #c5dcec 100%);
+
+  .module-deco {
+    background: #3e7ea8;
+  }
+
+  .module-count {
+    color: #2d6184;
+  }
+}
+
 .theme-algo {
   background: linear-gradient(160deg, #f7f3ea 0%, #e6d3a8 100%);
 
